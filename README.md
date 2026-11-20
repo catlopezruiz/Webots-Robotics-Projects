@@ -47,6 +47,6 @@ Developed autonomous navigation software using potential-field-based navigation 
 - Software Debugging
 - Simulation Testing
 
-## Author
+
 Catherine Lopez-Ruiz  
 Computer Science — Cal Poly Pomona
