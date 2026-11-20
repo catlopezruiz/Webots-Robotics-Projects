@@ -1,0 +1,156 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4295990415676335 0.41223479247288575 0.803434589346891 1.8280369689123066
+  position 0.010228222223672864 -2.19866861366477 3.1104952541540154
+}
+RectangleArena {
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Solid {
+  children [
+    Pose {
+      translation 0.375 -0.25 0.05
+      children [
+        Shape {
+          appearance DEF WALL_APPEARANCE PBRAppearance {
+            baseColor 0.45 0.25 0.1
+            roughness 0.85
+          }
+          geometry Box {
+            size 0.25 0.05 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.25 0 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.05 0.5 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.25 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.5 0.05 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.25 0 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.05 0.5 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.125 -0.25 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.25 0.05 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.125 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.05 0.25 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "maze_walls"
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0.375 -0.25 0.05
+        children [
+          Box {
+            size 0.25 0.05 0.1
+          }
+        ]
+      }
+      Pose {
+        translation 0.25 0 0.05
+        children [
+          Box {
+            size 0.05 0.5 0.1
+          }
+        ]
+      }
+      Pose {
+        translation 0 0.25 0.05
+        children [
+          Box {
+            size 0.5 0.05 0.1
+          }
+        ]
+      }
+      Pose {
+        translation -0.25 0 0.05
+        children [
+          Box {
+            size 0.05 0.5 0.1
+          }
+        ]
+      }
+      Pose {
+        translation -0.125 -0.25 0.05
+        children [
+          Box {
+            size 0.25 0.05 0.1
+          }
+        ]
+      }
+      Pose {
+        translation 0 -0.125 0.05
+        children [
+          Box {
+            size 0.05 0.25 0.1
+          }
+        ]
+      }
+    ]
+  }
+}
+E-puck {
+  translation 0.375 -0.375 0
+  rotation 0.0014057299477629767 -0.00044387714168637164 0.9999989134476082 2.5692909724852675
+  controller "MazeRunner"
+  distance_sensor_numberOfRays 8
+  turretSlot [
+    GPS {
+    }
+  ]
+}

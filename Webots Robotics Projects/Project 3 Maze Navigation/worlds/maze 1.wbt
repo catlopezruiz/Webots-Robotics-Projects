@@ -1,0 +1,109 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5490797413418967 0.5470247766601277 0.6318823714646999 2.0179152628612136
+  position 0.17100766472343332 -0.48047840883458365 2.821479683918469
+}
+RectangleArena {
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Solid {
+  children [
+    Pose {
+      translation 0.25 -0.25 0.05
+      children [
+        Shape {
+          appearance DEF WALL_APPEARANCE PBRAppearance {
+            baseColor 0.45 0.25 0.1
+            roughness 0.85
+          }
+          geometry Box {
+            size 0.5 0.05 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.05 0.5 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.125 0.25 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.25 0.05 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "baseline_wall"
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0.25 -0.25 0.05
+        children [
+          Box {
+            size 0.5 0.05 0.1
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 0.05
+        children [
+          Box {
+            size 0.05 0.5 0.1
+          }
+        ]
+      }
+      Pose {
+        translation -0.125 0.25 0.05
+        children [
+          Box {
+            size 0.25 0.05 0.1
+          }
+        ]
+      }
+    ]
+  }
+}
+E-puck {
+  hidden position_0_0 168.10091151173398
+  hidden position_0_1 165.23057376950638
+  hidden linearVelocity_0 1.3462010910310815e-07 -1.4966637231745204e-06 2.2200670931245743e-12
+  hidden angularVelocity_0 9.977736655732956e-05 8.974367737627356e-06 3.2057129311806085e-10
+  hidden rotation_1 0 1 0 4.738093525064735
+  hidden linearVelocity_1 2.23708096826519e-07 -1.9915524130321544e-06 -7.172024647913462e-13
+  hidden angularVelocity_1 9.977741675385223e-05 8.973801810689767e-06 -1.464785762291246e-10
+  hidden rotation_2 0 1 0 1.86775578283713
+  hidden linearVelocity_2 1.3527206079062895e-07 -1.9995065801064464e-06 -7.492132111193885e-13
+  hidden angularVelocity_2 9.97772763566873e-05 8.975362943890114e-06 2.2757065245044463e-10
+  translation 0.4046117507397446 0.2727854871749673 -6.396198394410801e-05
+  rotation -2.3880798998637308e-05 2.1828984809157527e-05 0.9999999994766013 1.6604973236591172
+  controller "MazeRunner"
+  distance_sensor_numberOfRays 8
+  turretSlot [
+    GPS {
+    }
+  ]
+}

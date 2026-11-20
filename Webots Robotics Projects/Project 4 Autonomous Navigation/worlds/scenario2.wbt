@@ -1,0 +1,111 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5623063116708845 0.5409286347652548 0.6254660853684105 2.058279337779727
+  position -0.019134993684899813 -0.6141187067721543 4.251386686675098
+}
+RectangleArena {
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Solid {
+  children [
+    Pose {
+      translation 0.25 -0.25 0.05
+      children [
+        Shape {
+          appearance DEF WALL_APPEARANCE PBRAppearance {
+            baseColor 0.45 0.25 0.1
+            roughness 0.85
+          }
+          geometry Box {
+            size 0.5 0.05 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.05 0.5 0.1
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.125 0.25 0.05
+      children [
+        Shape {
+          appearance USE WALL_APPEARANCE
+          geometry Box {
+            size 0.25 0.05 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "baseline_wall"
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0.25 -0.25 0.05
+        children [
+          Box {
+            size 0.5 0.05 0.1
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 0.05
+        children [
+          Box {
+            size 0.05 0.5 0.1
+          }
+        ]
+      }
+      Pose {
+        translation -0.125 0.25 0.05
+        children [
+          Box {
+            size 0.25 0.05 0.1
+          }
+        ]
+      }
+    ]
+  }
+}
+E-puck {
+  hidden position_0_0 229.14399017189004
+  hidden position_0_1 227.68238676824615
+  hidden linearVelocity_0 -6.273392759391646e-06 1.416545566932972e-05 -3.278290658262772e-09
+  hidden angularVelocity_0 -0.0009444319610909966 -0.0004182564091802245 1.7730580175915524e-11
+  hidden rotation_1 0 0.9999999999999999 0 2.9493191134249255
+  hidden linearVelocity_1 -8.36491794480836e-06 1.888816447827971e-05 2.354387796748436e-11
+  hidden angularVelocity_1 -0.0009444319413953327 -0.0004182564004554434 -1.7243957927090767e-10
+  hidden rotation_2 0 1 0 1.4877157097810338
+  hidden linearVelocity_2 -8.364917960129859e-06 1.8888164535665474e-05 2.3743540462350482e-11
+  hidden angularVelocity_2 -0.0009444319411899796 -0.0004182564008339564 2.079023004618342e-10
+  translation -0.366873531542393 0.35663089073295545 -6.394238612102664e-05
+  rotation 0.0007097374539409247 -0.0004619061970576037 0.9999996414576414 1.9877017759807172
+  controller "PotentialFields"
+  distance_sensor_numberOfRays 8
+  turretSlot [
+    GPS {
+    }
+    Compass {
+    }
+  ]
+}

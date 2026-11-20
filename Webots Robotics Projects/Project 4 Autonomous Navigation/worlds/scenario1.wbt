@@ -1,0 +1,75 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4437736449001693 0.4432202205672318 0.7788586445385021 1.8193761634577816
+  position -0.035529994720808394 -1.2154606998832087 1.4144270031868622
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+SolidBox {
+  translation 0.36 -0.37 0.05
+  size 0.1 0.1 0.1
+  appearance PBRAppearance {
+    baseColor 0.5 0.32 0.22
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+SolidBox {
+  translation -0.08 -0.15 0.05
+  name "box(2)"
+  size 0.1 0.1 0.1
+  appearance PBRAppearance {
+    baseColor 0.5 0.32 0.22
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+SolidBox {
+  translation 0.322353 0.260007 0.05
+  rotation 0 0 1 2.3008881569224826
+  name "box(1)"
+  size 0.1 0.1 0.1
+  appearance PBRAppearance {
+    baseColor 0.5 0.32 0.22
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+E-puck {
+  translation 0.15 -0.25 0
+  controller "PotentialFields"
+  turretSlot [
+    GPS {
+    }
+    Compass {
+    }
+  ]
+}
